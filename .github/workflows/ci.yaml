@@ -58,11 +58,11 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
-          git clone git@github.com:<your-user>/minikube-gitops.git
+          git clone git@github.com:cristalcorp/minikube-gitops.git
           cd minikube-gitops
           sed -i "s/tag: .*/tag: ${TAG}/" apps/hello-nginx-X/dev/values.yaml
-          git add apps/hello-nginx-X/dev/values.yaml
-          git commit -m "Update hello-nginx-X image tag to ${TAG}"
+          git add apps/hello-nginx-2/dev/values.yaml
+          git commit -m "Update hello-nginx-2 image tag to ${TAG}"
           git push
         env:
           TAG: ${{ env.TAG }}
